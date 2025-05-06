@@ -1,0 +1,96 @@
+body {
+  background: radial-gradient(circle, #121212 0%, #1c1c1c 100%);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Başlık */
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin: 20px 0 10px;
+  text-shadow: 0 0 10px #ffd700;
+}
+
+.icon {
+  font-size: 1.8rem;
+  vertical-align: middle;
+}
+
+/* Görselin bulunduğu ana alan */
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* davul görsel kutusu */
+.image-container {
+  background: radial-gradient(circle, #3b3b3b 0%, #1a1a1a 100%);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(6, 255, 255, 0.3);
+  display: inline-block;
+}
+
+
+.drum-img {
+  max-width: 600px;
+  width: 90%;
+  height: auto;
+  margin-bottom: 50px;
+  filter: brightness(1.8) contrast(1.1);  /*görseli parlak ve canlı göstermek için*/
+  border-radius: 12px;
+}
+
+/* Drum tuşları sabit alt kısımda */
+.keys {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #111;
+  padding: 25px 0;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+/* Tuşların genel stili */
+.drum {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  background-color: #e50914;
+  border: none;
+  color: white;
+  box-shadow: 0 4px #a40610;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* Hover renk efektleri */
+.drum[data-key="A"]:hover { background-color: #ff00ff; box-shadow: 0 0 20px #ff00ff; }
+.drum[data-key="S"]:hover { background-color: #00ff00; box-shadow: 0 0 20px #00ff00; }
+.drum[data-key="D"]:hover { background-color: #00ffff; box-shadow: 0 0 20px #00ffff; }
+.drum[data-key="F"]:hover { background-color: #ffff00; box-shadow: 0 0 20px #ffff00; }
+.drum[data-key="G"]:hover { background-color: #ff6600; box-shadow: 0 0 20px #ff6600; }
+.drum[data-key="H"]:hover { background-color: #ff1493; box-shadow: 0 0 20px #ff1493; }
+.drum[data-key="J"]:hover { background-color: #1abc9c; box-shadow: 0 0 20px #1abc9c; }
+.drum[data-key="K"]:hover { background-color: #9b59b6; box-shadow: 0 0 20px #9b59b6; }
+.drum[data-key="L"]:hover { background-color: #e74c3c; box-shadow: 0 0 20px #e74c3c; }
+
+/* Tuşa basıldığında animasyon */
+.drum.pressed {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px white;
+}
